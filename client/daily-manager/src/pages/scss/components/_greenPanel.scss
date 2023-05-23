@@ -1,0 +1,22 @@
+@use '../utils/colors' as *;
+@use '../utils/mixins' as *;
+
+.greenPanel{
+    @include flex-column;
+    background-color: $green-panel;
+    width: 327px;
+}
+
+.avatar{
+    border-radius: 100%;
+    width: 218px;
+    height: 218px;
+    margin-top: 3%
+}
+
+.userTitle{
+    @include flex-column;
+    color:#ffff;
+    margin-top: 1%;
+    font-size: x-large;
+}

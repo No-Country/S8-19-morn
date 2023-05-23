@@ -1,5 +1,6 @@
 @use "./colors" as *;
 @use "./fonts" as *;
+@use "./mixins" as *;
 
 /* Acá se aplican las reglas generales de éstilo, con selectores puros SOLO anidados dentro de uno de clase */
 
@@ -16,5 +17,17 @@
     font-size: larger;
     font-weight: 500;
     color: $blue-header
+  }
+
+  ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;    
+    padding: 0;
+    li{
+      margin-bottom:10%;
+      color: #ffff;
+      font-size: larger;
+    }
   }
 }
