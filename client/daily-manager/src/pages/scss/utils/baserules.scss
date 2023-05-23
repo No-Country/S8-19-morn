@@ -1,0 +1,19 @@
+@use "./colors" as *;
+@use "./fonts" as *;
+
+/* Acá se aplican las reglas generales de éstilo, con selectores puros SOLO anidados dentro de uno de clase */
+
+
+
+.mainLayout {  
+  h1 {
+    text-align: center;
+    color: $color-principal;
+  }
+  p {
+    text-align: center;
+    font-size: larger;
+    font-weight: 500;
+    color: $color-secundario;
+  }
+}
