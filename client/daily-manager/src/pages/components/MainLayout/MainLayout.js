@@ -12,7 +12,7 @@ export default function MainLayout() {
     <div className={mainLayout}>
       <Header />
 
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", flexGrow: 1}}>
         <GreenPanel />
         <PrincipalComponent />
       </div>
