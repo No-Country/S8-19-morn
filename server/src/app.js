@@ -5,12 +5,16 @@ import { __dirname } from './utils.js'
 import config from './config.js'
 import cookieParser from 'cookie-parser'
 import session from 'express-session'
+import mongoose from 'mongoose'
+
+
 
 
 
 const app = express()
 const PORT = config.port
 
+import userRoutes from './routes/user.router.js'
 
 // Setup de aplicacion
 app.use(express.json())
@@ -18,6 +22,13 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static(__dirname + '/public'))
 app.use(cookieParser())
 app.use(cors())
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors())
+app.use('/users',userRoutes)
+
+
+
 
 
 // Mongo sesion
