@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../scss/globals.module.scss";
 import Image from "next/image";
-import ezeIa from "../../../../public/eze.png";
+import ezeIa from "../../public/eze.png";
 
 const {greenPanel, avatar, userTitle} = styles;
 

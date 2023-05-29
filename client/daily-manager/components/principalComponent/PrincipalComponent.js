@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import LandingImg from "../../../../public/landingImg.png";
+import LandingImg from "../../public/landingImg.png";
 import styles from "../../scss/globals.module.scss";
 
 const { ppalComponent, landingImg } = styles;
