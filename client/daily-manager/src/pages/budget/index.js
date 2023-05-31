@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import MainLayout from "../../../components/MainLayout/MainLayout";
 import styles from "../../../scss/globals.module.scss";
+import Outputs from "../../../components/outputs/Ouputs";
 
 const { budgetStyled } = styles;
 
@@ -34,6 +35,8 @@ export default function Budget() {
             <button onClick={handleSetBudget}>Establecer Presupuesto</button>
           </>
         )}
+
+        <Outputs />
       </div>
     </MainLayout>
   );
