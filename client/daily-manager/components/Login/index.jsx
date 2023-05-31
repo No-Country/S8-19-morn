@@ -8,7 +8,6 @@ export default function Login(){
     const handleModal = () => {
         setOpenModal(!openModal)
     }
-    console.log(openModal)
     return(
         <>
         <button className={loginButton} onClick={handleModal}>

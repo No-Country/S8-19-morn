@@ -1,3 +1,5 @@
+@use '../utils/colors' as *;
+
 .loginButton {
     position: absolute;
     top: 0;
@@ -37,20 +39,52 @@
     gap: 1rem;
     padding: 2rem;
     border-radius: 1rem;
+
+    input {
+        padding: .5rem 0;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid #00000030;
+        transition: ease-in-out .3s;
+    }
+
+    input:focus {
+        border-bottom: 2px solid $green-panel;
+    }
+
+    button:not(.closeButton) {
+        background-color: $green-panel;
+        color: #fff;
+        border-color: transparent;
+        padding: .5rem 0;
+        border-radius: 1rem;
+        cursor: pointer;
+        transition: ease-in-out .2s;
+    }
+
+    button:not(.closeButton):hover {
+        filter: opacity(80);
+    }
+
+    p {
+        font-size: 14px;
+        color: #00000090;
+    }
 }
 
 .closeButton {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 4px;
+    right: 4px;
     border-radius: 1rem;
     border: none;
     cursor: pointer;
     transition: ease-in-out .2s;
     text-align: center;
+    background: none;
 }
 
 .closeButton:hover {
-    background-color: #4f0202;
-    color: #fff;
+    color: #4f0202;
+    font-weight: 700;
 }
