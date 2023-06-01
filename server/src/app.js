@@ -13,8 +13,7 @@ import mongoose from 'mongoose'
 
 const app = express()
 const PORT = config.port
-
-import userRoutes from './routes/user.router.js'
+import usersRouter from "./routes/user.router.js"; 
 
 // Setup de aplicacion
 app.use(express.json())
@@ -25,7 +24,7 @@ app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors())
-app.use('/users',userRoutes)
+app.use('/users',usersRouter)
 
 
 

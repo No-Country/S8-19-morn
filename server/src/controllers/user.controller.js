@@ -1,5 +1,6 @@
-const User = require('../DAOs/models/user.model');
-const bcrypt = require('bcrypt');
+import User from '../DAOs/models/user.model.js';
+import bcrypt from 'bcrypt'
+;
 
 // Controlador para crear un nuevo usuario
 const createUser = async (req, res) => {
@@ -74,7 +75,7 @@ const getUserById = async (req, res) => {
   };  
 
   
-module.exports = {
+export {
   createUser,
   login,
   getUserById
