@@ -5,6 +5,8 @@ import { __dirname } from './utils.js'
 import config from './config.js'
 import cookieParser from 'cookie-parser'
 import session from 'express-session'
+// Routes
+import budgetRouter from './routes/budget.router.js'
 
 
 
@@ -34,13 +36,12 @@ app.use(
 
 
 // Routes
-
-
+app.use('/budget', budgetRouter)
 
 
 
 // Error de routing
-app.all('*',(req,res) => {
+app.all('*', (req, res) => {
     res.send('<h1>PAGINA NO ENCONTRADA</h1>')
 })
 
