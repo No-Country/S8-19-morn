@@ -13,9 +13,7 @@ export default function GreenPanel() {
       <h5 className={userTitle}>JHON DOE</h5>
       <nav>
         <ul>
-          <li>my FINANCES</li>
-          <li>my LEARNING</li>
-          <li>my WEATHER</li>
+          
           <Link href='/budget'>
             <li>my BUDGET</li>
           </Link>
