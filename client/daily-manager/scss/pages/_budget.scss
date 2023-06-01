@@ -1,0 +1,16 @@
+@use "../utils/colors" as *;
+@use "../utils/mixins" as *;
+
+.budgetStyled {
+  @include flex-column;
+  width: 100%;
+  h5 {
+    font-size: xx-large;
+  }  
+}
+
+
+.totalAmmount{
+  text-align: center;
+  font-size: x-large;
+}

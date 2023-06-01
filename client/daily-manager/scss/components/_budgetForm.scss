@@ -1,0 +1,6 @@
+@use '../utils/mixins' as *;
+
+
+.budgetForm{
+    @include flex
+}
