@@ -1,0 +1,19 @@
+/* 
+-Crear una hoja parcial de estilos -> '_nombreDeLaHoja' por componente;
+-Importarla en ésta hoja, como el ejemplo de abajo;
+*/
+
+
+
+
+@forward './header';
+@forward './greenPanel';
+@forward './footer';
+@forward './principalcomponent';
+@forward './expenseList';
+@forward './expenseForm';
+@forward './incomeForm';
+@forward './outputs';
+@forward './budgetForm';
+@forward './budgetSummary';
+@forward './login';
