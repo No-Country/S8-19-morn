@@ -1,0 +1,23 @@
+@use '../utils/colors' as *;
+@use '../utils/mixins' as *;
+
+
+.budgetSummary{
+    background-color: $lightBlue-card;
+    padding: 1%;
+    border-radius: 20px;
+    color: antiquewhite;
+    font-weight: 500;
+    width: 60%;
+    margin: 1% 20% 3% 20%;
+    text-align: center;
+    @include shadow
+}
+
+
+.resumeTitle{
+    margin: 0;
+    span{
+        color:$green-card
+    }
+}

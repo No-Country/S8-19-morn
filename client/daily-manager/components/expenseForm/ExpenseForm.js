@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../../scss/globals.module.scss";
 
-const {styledForm, styledButton} = styles;
+const {styledForm, expenseBtn} = styles;
 
 export default function ExpenseForm({ onAddExpense }) {
   const [expenseName, setExpenseName] = useState("");
@@ -42,7 +42,7 @@ export default function ExpenseForm({ onAddExpense }) {
         value={expenseAmount}
         onChange={handleChangeAmount}
       />
-      <button onClick={handleAddExpense} className={styledButton}>Agregar nuevo gasto</button>
+      <button onClick={handleAddExpense} className={expenseBtn}>Agregar nuevo gasto</button>
     </div>
   );
 }
