@@ -1,23 +1,23 @@
-import { getBudget, createBudget, deleteBudget, updateBudget } from "../services/budget.service.js";
+import { getBudget, createBudget, deleteBudget, updateBudget, getAllBudget } from "../services/budget.service.js";
 
 
-export async function createOneBudget(req,res){
+export async function createOneBudget(req, res) {
     try {
-        const { type, user, amount, income, outgoing, date}= req.body
-        if(!type || !user || !amount){
+        const { type, currentAmount } = req.body
+        if (!type || !currentAmount) {
             console.log('Budget incomplete')
             res.send('Budget incomplete')
         } else {
             const newBudget = req.body
-            const addBudget= await createBudget(newBudget)
-            res.json({message:'budget created', addBudget})
+            const addBudget = await createBudget(newBudget)
+            res.json({ message: 'budget created', addBudget })
         }
     } catch (error) {
         console.log('Loading error')
     }
 }
 
-export async function getOneBudget(req,res){
+export async function getOneBudget(req, res) {
     try {
         const budget = await getBudget()
         res.json(budget)
@@ -26,28 +26,38 @@ export async function getOneBudget(req,res){
     }
 }
 
-export async function updateOneBudget(req,res){
-    const id = req.params.idBudget
+export async function getAllBudgets(req, res) {
     try {
-        const updatedBudget = await updateBudget({_id : id})
-        if(!updatedBudget){
-            res.json({message:'budget not found'})
-        } else {
-            res.json({message:'budget updated', updatedBudget})
-        }
+        const allBudget = await getAllBudget()
+        res.json(allBudget)
     } catch (error) {
-        console.log('Error detected')
+        res.json({ error: error.message })
     }
 }
 
-export async function deleteOneBudget(req,res){
-    const id = req.params.idBudget
+export async function updateOneBudget(req, res) {
+    const { income, outgoing } = req.body
+    const { id } = req.params
     try {
-        const deletedBudget = await deleteBudget({_id: id})
-        if(!deleteBudget){
-            res.json({message:'budget not found'})
+        const updatedBudget = await updateBudget({ _id: id }, income, outgoing)
+        if (!updatedBudget) {
+            res.json({ message: 'budget not found' })
         } else {
-            res.json({message:'budget deleted'})
+            res.json({ message: 'budget updated', updatedBudget })
+        }
+    } catch (error) {
+        res.status(500).json({ error: error.message })
+    }
+}
+
+export async function deleteOneBudget(req, res) {
+    const id = req.params.id
+    try {
+        const deletedBudget = await deleteBudget({ _id: id })
+        if (!deleteBudget) {
+            res.json({ message: 'budget not found' })
+        } else {
+            res.json({ message: 'budget deleted' })
         }
     } catch (error) {
         console.log('Error detected')

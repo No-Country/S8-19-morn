@@ -12,9 +12,9 @@ export class BudgetManager {
         }
     }
 
-    async getOne(){
+    async getOne(id){
         try {
-            const budget= await budgetModel.find()
+            const budget= await budgetModel.find(id)
             return budget
         } catch (error) {
             console.log(error)
@@ -22,9 +22,19 @@ export class BudgetManager {
         }
     }
 
-    async updateOne(id,updateObj){
+    async getAll(){
         try {
-            const updateBudget = await budgetModel.findByIdAndUpdate(id,updateObj)
+            const budgets= await budgetModel.find()
+            return budgets
+        } catch (error) {
+            console.log(error)
+            throw new Error(error)
+        }
+    }
+
+    async updateOne(id,inc,out){
+        try {
+            const updateBudget = await budgetModel.findByIdAndUpdate(id,inc,out)
             return updateBudget
         } catch (error) {
             console.log(error)

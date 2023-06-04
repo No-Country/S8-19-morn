@@ -1,11 +1,11 @@
 import { Router } from "express"
-import { createOneBudget, getOneBudget, updateOneBudget, deleteOneBudget } from "../controllers/budget.controller.js"
+import { createOneBudget, getOneBudget, updateOneBudget, deleteOneBudget, getAllBudgets } from "../controllers/budget.controller.js"
 
 
 const router = Router()
 
 // get
-router.get('/', getOneBudget)
+router.get('/', getAllBudgets)
 
 // post
 router.post('/create', createOneBudget)

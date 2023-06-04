@@ -1,6 +1,8 @@
 import express from 'express'
 import cors from 'cors'
 import MongoStore from 'connect-mongo'
+import mongoose from 'mongoose'
+import './DAOs/dbConfig.js'
 import { __dirname } from './utils.js'
 import config from './config.js'
 import cookieParser from 'cookie-parser'
@@ -22,6 +24,8 @@ app.use(cookieParser())
 app.use(cors())
 
 
+
+
 // Mongo sesion
 app.use(
     session({
@@ -31,8 +35,9 @@ app.use(
         resave: false,
         saveUninitialized: false,
         secret: 'sessionKey',
-        cookie: { max: 100000 }
+        cookie: { max: 60000 }
     }))
+
 
 
 // Routes
