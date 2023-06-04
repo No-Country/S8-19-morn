@@ -8,19 +8,19 @@ import config from './config.js'
 import cookieParser from 'cookie-parser'
 import session from 'express-session'
 
-import mongoose from 'mongoose'
+
 
 
 
 // Routes
 import budgetRouter from './routes/budget.router.js'
-
+import taskRouter from './routes/task.router.js'
 
 
 
 const app = express()
 const PORT = config.port
-import usersRouter from "./routes/user.router.js"; 
+import usersRouter from "./routes/user.router.js";
 
 // Setup de aplicacion
 app.use(express.json())
@@ -55,6 +55,7 @@ app.use(
 
 // Routes
 app.use('/budget', budgetRouter)
+app.use('/task', taskRouter)
 
 
 
