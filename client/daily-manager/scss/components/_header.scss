@@ -1,0 +1,10 @@
+@use '../utils/colors' as *;
+
+.header {
+    background-color: $blue-header;
+    text-align: center;
+    font-weight: 500;
+    color: #ffff;
+    margin: 0;
+    position: relative;
+}

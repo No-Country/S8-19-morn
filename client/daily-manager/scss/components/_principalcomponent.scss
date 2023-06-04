@@ -1,0 +1,17 @@
+.ppalComponent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 4rem;
+
+    h3 {
+        font-size: 4rem;
+        max-width: 456px;
+    }
+}
+
+
+.landingImg {
+    width: 456px;
+}
