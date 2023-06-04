@@ -12,10 +12,7 @@ export default function GreenPanel() {
       <Image src={ezeIa} alt="userAvatar" className={avatar} />
       <h5 className={userTitle}>JHON DOE</h5>
       <nav>
-        <ul>
-          <li>my FINANCES</li>
-          <li>my LEARNING</li>
-          <li>my WEATHER</li>
+        <ul>          
           <Link href='/budget'>
             <li>my BUDGET</li>
           </Link>

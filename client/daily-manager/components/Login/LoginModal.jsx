@@ -12,7 +12,7 @@ export default function LoginModal({open, handleClose}){
     }
     const handleSubmit = (evt) => {
         evt.preventDefault()
-        console.log(formFields)
+        /* console.log(formFields) */
         // const url = 'http://localhost:3001/login'
         // fetch(url, {
         //     method: 'POST',

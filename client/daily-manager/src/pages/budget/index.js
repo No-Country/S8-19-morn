@@ -5,6 +5,7 @@ import styles from "../../../scss/globals.module.scss";
 import Outputs from "../../../components/outputs/Ouputs";
 import BudgetForm from "../../../components/budgetForm/BudgetForm";
 import BudgetSummary from "../../../components/budgetSummary/BudgetSummary";
+import ProgresiveBar from "../../../components/progresiveBar/ProgresiveBar";
 
 const { budgetStyled } = styles;
 
@@ -18,7 +19,9 @@ export default function Budget() {
     <MainLayout>
       <div className={budgetStyled}>
         {budget ? (
-          <BudgetSummary budget={budget} />
+          <>
+            <BudgetSummary budget={budget} />
+          </>
         ) : (
           <BudgetForm onSetBudget={handleSetBudget} />
         )}

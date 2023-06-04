@@ -5,6 +5,7 @@ import ExpenseForm from "../expenseForm/ExpenseForm";
 import ExpenseList from "../expenseList/ExpenseList";
 import IncomeForm from "../incomeForm/IncomeForm";
 import styles from "../../scss/globals.module.scss";
+import ProgresiveBar from "../progresiveBar/ProgresiveBar";
 
 const { outputs, totalAmount } = styles;
 
@@ -30,6 +31,7 @@ export default function Ouputs() {
 
   return (
     <div className={outputs}>
+      <ProgresiveBar  />
       <IncomeForm onAddIncome={handleAddIncome} />
       <ExpenseForm onAddExpense={handleAddExpense} />
       <ExpenseList expenses={expenses} incomes={incomes} />
