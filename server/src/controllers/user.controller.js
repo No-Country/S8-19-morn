@@ -1,5 +1,6 @@
 import User from '../DAOs/models/user.model.js';
 import bcrypt from 'bcrypt'
+
 ;
 
 // Controlador para crear un nuevo usuario
