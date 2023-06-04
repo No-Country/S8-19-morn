@@ -1,0 +1,19 @@
+@use "../utils/mixins" as *;
+@use "../utils/colors" as *;
+
+.incomeBtn {
+  background-color: $violet-card;
+  border: none;
+  border-radius: 20px;
+  box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  padding: 1%;
+  margin: 1%;
+  cursor: pointer;
+  &:hover {
+    color: $violet-card;
+    background-color: #fff;
+    border: 2px solid $violet-card;
+  }
+}
