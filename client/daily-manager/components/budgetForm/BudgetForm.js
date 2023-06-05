@@ -11,8 +11,32 @@ export default function BudgetForm({ onSetBudget }) {
   };
 
   const handleSetBudget = () => {
-    onSetBudget(inputValue);
-    setInputValue("");
+   
+    
+
+    const budgetData = {
+      type: "personal",
+      currentAmount: parseInt(inputValue),
+    };
+
+    fetch("http://localhost:8080/budget/create", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(budgetData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        onSetBudget(data);
+      })
+      .catch((error) => {
+        // Manejo de errores
+        console.error(error);
+      });
+
+      setInputValue("");  
   };
 
   return (
