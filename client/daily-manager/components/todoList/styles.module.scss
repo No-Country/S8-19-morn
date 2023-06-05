@@ -1,0 +1,33 @@
+@import "../../scss/utils/colors";
+
+@media (max-width: ($breakpoint - 1)) {
+  .tasksContainer {
+    overflow-y: scroll;
+    background-color: violet;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 35px;
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+}
+
+@media (min-width: $breakpoint) {
+  .tasksContainer {
+    overflow-y: scroll;
+    background-color: violet;
+    width: 550px;
+    height: 100vh;
+    padding-top: 35px;
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+}

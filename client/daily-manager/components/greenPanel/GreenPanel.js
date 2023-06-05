@@ -17,6 +17,9 @@ export default function GreenPanel() {
           <Link href='/budget'>
             <li>my BUDGET</li>
           </Link>
+          <Link href='/todo' as={'/todo'} >
+            <li>my TODO</li>
+          </Link>
         </ul>
       </nav>
     </div>
