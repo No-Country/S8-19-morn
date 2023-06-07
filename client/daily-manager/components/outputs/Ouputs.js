@@ -37,7 +37,12 @@ export default function Ouputs({ budgetAmount, onSetBudget }) {
         budget={budgetAmount}
         handleSetBudget={handleSetBudget}
       />
-      <ExpenseForm onAddExpense={handleAddExpense} />
+      <ExpenseForm
+        onAddExpense={handleAddExpense}
+        budget={budgetAmount}
+        handleSetBudget={handleSetBudget}
+      />
+      
       <ExpenseList expenses={expenses} incomes={incomes} />
     </div>
   );
