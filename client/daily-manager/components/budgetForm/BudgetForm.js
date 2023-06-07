@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../../scss/globals.module.scss";
 
-const { budgetForm } = styles;
+const { budgetForm,setBudgetBtn } = styles;
 
 export default function BudgetForm({ onSetBudget }) {
   const [inputValue, setInputValue] = useState("");
@@ -25,7 +25,7 @@ export default function BudgetForm({ onSetBudget }) {
           value={inputValue}
           onChange={handleChange}
         />
-        <button onClick={handleSetBudget}>Establecer Presupuesto</button>
+        <button onClick={handleSetBudget} className={setBudgetBtn}>Establecer Presupuesto</button>
       </div>
     </>
   );
