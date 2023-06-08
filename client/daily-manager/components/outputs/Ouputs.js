@@ -5,10 +5,11 @@ import ExpenseForm from "../expenseForm/ExpenseForm";
 import ExpenseList from "../expenseList/ExpenseList";
 import IncomeForm from "../incomeForm/IncomeForm";
 import styles from "../../scss/globals.module.scss";
+import ProgresiveBar from "../progresiveBar/ProgresiveBar";
 
 const { outputs, totalAmount } = styles;
 
-export default function Ouputs() {
+export default function Ouputs({ budgetAmount, onSetBudget }) {
   const [expenses, setExpenses] = useState([]);
   const [incomes, setIncomes] = useState([]);
 
@@ -20,25 +21,29 @@ export default function Ouputs() {
     setIncomes([...incomes, newIncome]);
   };
 
-  const calculateTotalAmount = (data) => {
-    const totalAmount = data.reduce(
-      (accumulator, item) => accumulator + +item.amount,
-      0
-    );
-    return totalAmount;
+  const setBudgetAmount = (newBudgetAmount) => {
+    onSetBudget(newBudgetAmount);
+  };
+
+  const handleSetBudget = (newBudgetAmount) => {
+    // Actualiza el estado del presupuesto
+    setBudgetAmount(newBudgetAmount);
   };
 
   return (
     <div className={outputs}>
-      <IncomeForm onAddIncome={handleAddIncome} />
-      <ExpenseForm onAddExpense={handleAddExpense} />
+      <IncomeForm
+        onAddIncome={handleAddIncome}
+        budget={budgetAmount}
+        handleSetBudget={handleSetBudget}
+      />
+      <ExpenseForm
+        onAddExpense={handleAddExpense}
+        budget={budgetAmount}
+        handleSetBudget={handleSetBudget}
+      />
+      
       <ExpenseList expenses={expenses} incomes={incomes} />
-      <p className={totalAmount}>
-        Tus gastos son: {parseInt(calculateTotalAmount(expenses), 10)}
-      </p>
-      <p className={totalAmount}>
-        Tus ingresos son: {parseInt(calculateTotalAmount(incomes), 10)}
-      </p>
     </div>
   );
 }
