@@ -1,4 +1,4 @@
-// @import '../../../scss/utils/colors';
+@import '../../../scss/utils/colors';
 
 // * {
 //   margin: 0;
@@ -12,27 +12,38 @@
 //   overflow-x: hidden;
 // }
 
-// @media (max-width: ($breakpoint - 1)) {
-//   .main {
-//     background-color: $violeta_oscuro;
-//     width: 100vw;
-//     height: 100vh;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-//     gap: 50px;
-//   }
-// }
+@media (max-width: ($breakpoint - 1)) {
+  .main {
+    background-color: whitesmoke;
+    width: fit-content;
+    // max-width: calc(100vh - 327px);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    scrollbar-width: none;
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
 
-// @media (min-width: $breakpoint) {
-//   .main {
-//     background-color: $violeta_oscuro;
-//     width: 100vw;
-//     height: 100vh;
-//     display: flex;
-//     justify-content: space-between;
-//   }
-// }
+@media (min-width: $breakpoint) {
+  .main {
+    background-color: whitesmoke;
+    width: fit-content;
+    // max-width: calc(100vh - 327px);
+    // width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    scrollbar-width: none;
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
 
 
