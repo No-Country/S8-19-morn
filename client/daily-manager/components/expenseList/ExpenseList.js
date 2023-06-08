@@ -1,22 +1,29 @@
 import React from "react";
 import styles from "../../scss/globals.module.scss";
 
-const { expenseCtn, styledExpense, styledIncome } = styles;
+const { expenseCtn, styledExpense, styledIncome, movements_title } = styles;
 
-export default function ExpenseList({ expenses, incomes , budgetAmount}) {
+export default function ExpenseList({ expenses, incomes, budgetAmount }) {
   // Calcula la suma total de ingresos
-  const totalIncome = incomes.reduce((total, income) => total + income.amount, 0);
+  const totalIncome = incomes.reduce(
+    (total, income) => total + income.amount,
+    0
+  );
 
   // Calcula la suma total de egresos
-  const totalExpense = expenses.reduce((total, expense) => total + expense.amount, 0);
+  const totalExpense = expenses.reduce(
+    (total, expense) => total + expense.amount,
+    0
+  );
 
   // Calcula el resultado (ingresos - egresos)
   const result = totalIncome - totalExpense;
 
-  const finalResult = budgetAmount - result
+  const finalResult = budgetAmount - result;
 
   return (
     <div>
+    <h3 className={movements_title}>Tus movimientos</h3>
       <div className={expenseCtn}>
         {expenses.length > 0 &&
           expenses.map((expense, index) => (
@@ -31,7 +38,6 @@ export default function ExpenseList({ expenses, incomes , budgetAmount}) {
             </p>
           ))}
       </div>
-      <p style={{textAlign:'center'}}>Resultado: {finalResult}</p>
     </div>
   );
 }

@@ -13,20 +13,26 @@
 
 .styledExpense {
   @include flex-column;
-  color: red;
-  font-weight: 700;
+  color: black;
+  font-weight: 500;
   font-size: large;
   text-transform: capitalize;
-  border-bottom: 2px black groove
+  border-bottom: 2px rgb(163, 157, 157) groove;
+
   
 }
 
 .styledIncome {
   @include flex-column;
-  color: green;
-  font-weight: 700;
+  color: black;
+  font-weight: 500;
   font-size: large;
   text-transform: capitalize;
-  border-bottom: 2px black groove
+  border-bottom: 2px rgb(163, 157, 157) groove;
+}
+
+
+.movements_title{
+  text-align:center;
 }
 

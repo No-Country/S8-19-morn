@@ -44,7 +44,7 @@ export default function ExpenseForm({ onAddExpense, budget, handleSetBudget }) {
         onChange={handleChangeAmount}
       />
       <button onClick={handleAddExpense} className={expenseBtn}>
-        Agregar nuevo gasto
+        Agregar nuevo egreso
       </button>
     </div>
   );
