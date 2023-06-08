@@ -1,5 +1,13 @@
-@use "../utils/mixins" as *;
+
 @use "../utils/colors" as *;
+@use "../utils/mixins" as *;
+
+.styledForm {
+  @include flex ;
+  input {
+    margin: 0.5%;
+  }  
+}
 
 .incomeBtn {
   background-color: $violet-card;

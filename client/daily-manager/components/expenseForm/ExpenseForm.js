@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styles from "../../scss/globals.module.scss";
 
-const {styledForm, expenseBtn} = styles;
+const { styledForm, expenseBtn } = styles;
 
-export default function ExpenseForm({ onAddExpense }) {
+export default function ExpenseForm({ onAddExpense, budget, handleSetBudget }) {
   const [expenseName, setExpenseName] = useState("");
   const [expenseAmount, setExpenseAmount] = useState("");
 
@@ -22,6 +22,7 @@ export default function ExpenseForm({ onAddExpense }) {
     };
 
     onAddExpense(newExpense);
+    handleSetBudget(parseFloat(budget) - parseFloat(expenseAmount));
 
     // Limpiar los campos del formulario después de agregar un gasto
     setExpenseName("");
@@ -42,7 +43,9 @@ export default function ExpenseForm({ onAddExpense }) {
         value={expenseAmount}
         onChange={handleChangeAmount}
       />
-      <button onClick={handleAddExpense} className={expenseBtn}>Agregar nuevo gasto</button>
+      <button onClick={handleAddExpense} className={expenseBtn}>
+        Agregar nuevo egreso
+      </button>
     </div>
   );
 }

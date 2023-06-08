@@ -3,7 +3,7 @@ import styles from "../../scss/globals.module.scss";
 
 const {styledForm, incomeBtn} = styles;
 
-export default function IncomeForm({ onAddIncome }) {
+export default function IncomeForm({ onAddIncome, budget , handleSetBudget}) {
   const [incomeName, setIncomeName] = useState("");
   const [incomeAmount, setIncomeAmount] = useState("");
 
@@ -16,12 +16,17 @@ export default function IncomeForm({ onAddIncome }) {
   };
 
   const handleAddIncome = () => {
+
     const newIncome = {
       name: incomeName,
       amount: incomeAmount,
     };
 
+
+
     onAddIncome(newIncome);
+
+    handleSetBudget(parseFloat(budget) + parseFloat(incomeAmount))
 
     // Limpiar los campos del formulario después de agregar un ingreso
     setIncomeName("");
