@@ -59,7 +59,12 @@ const Todo = () => {
       <MainLayout>
         <main className={main}>
           <TodoForm onSubmit={onSubmit} onChange={onChange} task={task} />
-          <TodoList tasks={tasks} removeTask={removeTask} />
+          {
+            tasks.length === 0 ? 
+            <></> 
+            : 
+            <TodoList tasks={tasks} removeTask={removeTask} />
+          }
         </main>
       </MainLayout>
     </>
