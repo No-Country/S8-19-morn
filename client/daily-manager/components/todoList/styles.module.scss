@@ -3,8 +3,8 @@
 @media (max-width: ($breakpoint - 1)) {
   .tasksContainer {
     overflow-y: scroll;
-    background-color: violet;
-    width: 100vw;
+    background-color: rgb(135, 197, 172);
+    width: fit-content;
     height: 100vh;
     padding-top: 35px;
     padding-right: 25px;
@@ -12,6 +12,7 @@
     padding-bottom: 35px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 25px;
   }
 }
@@ -19,8 +20,8 @@
 @media (min-width: $breakpoint) {
   .tasksContainer {
     overflow-y: scroll;
-    background-color: violet;
-    width: 550px;
+    background-color: rgb(135, 197, 172);
+    width: fit-content;
     height: 100vh;
     padding-top: 35px;
     padding-right: 25px;
@@ -28,6 +29,7 @@
     padding-bottom: 35px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 25px;
   }
 }

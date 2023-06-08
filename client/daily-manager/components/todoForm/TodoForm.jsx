@@ -8,14 +8,15 @@ import {
   formContainer,
 } from './styles.module.scss';
 
+
 const TodoForm = ({onSubmit, onChange, task}) => {
   const {title, description} = task;
 
   return (
     <div className={formContainer}>
-      <h2>Todo List</h2>
+      
       <form className={form} onSubmit={e => onSubmit (e)}>
-        <h3>Add Task</h3>
+        <h3>Añadir tarea</h3>
         <div className={inputsContainer}>
           <input
             autoComplete="off"
